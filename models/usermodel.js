@@ -8,9 +8,7 @@ let userScheme = new mongoose.Schema({
     type: String,
     select: false,
   },
-  resetPasswordToken: String,
-  resetPasswordExpires: Date,
 });
-
 userScheme.plugin(passportLocalMongoose, { usernameField: "email" });
+
 module.exports = mongoose.model("User", userScheme);

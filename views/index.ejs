@@ -1,0 +1,49 @@
+<%- include('partials/header') -%>
+
+    <div class="second-row">
+        <div class="text-box">
+            <h1>ShopSmart for Groceries </h1>
+            <h2>Find the Best Deals in Every Aisle! </h2>
+            <p>Welcome to DiscountMate, your go-to destination for hassle-free grocery price comparison! effortlessly find the best deals on all your essential items from various shops. 
+            </p>
+
+            <form action="/resultsproducts" method="GET" class="form-container">
+                <input type="text" name="title" class="form-control" placeholder="Enter item title here ..">
+                <button class="ml-3 text-center btn btn-search">Search</button>
+            </form>
+            
+                
+        </div>
+
+        <img class="ScienceCollab" src="/Images/Logo.jpg" alt="">
+
+
+    </div>
+
+    <!-- design the bottom section containing three different cards -->
+
+    <div class="third-row">
+        <div class="card">
+            <div class="Card-image card-1"></div>
+            <p class="heading-card">Save Every shop</p>
+            <p class="description">Find savings on thousands of products every week across grocery retailers across Australia</p>
+            <a href="#">Read More</a>
+        </div>
+
+        <div class="card">
+            <div class="Card-image card-2"></div>
+            <p class="heading-card">Search Recipes  </p>
+            <p class="description">Explore endless culinary possibilities to inspire your next delicious meal. </p>
+            <a href="#">Read More</a>
+        </div>
+
+        <div class="card">
+            <div class="Card-image card-3"></div>
+            <p class="heading-card">Search Items </p>
+            <p class="description">The top 100 most appealing poster rated by people and researchers </p>
+            <a href="#">Read More</a>
+        </div>
+
+    </div>
+
+<%- include('partials/footer') -%>

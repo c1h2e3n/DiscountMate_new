@@ -1,16 +1,29 @@
 // router.js
 const express = require("express");
 const router = express.Router();
+const passport = require("passport");
+const crypto = require("crypto");
+const async = require("async");
+const nodemailer = require("nodemailer");
 const puppeteer = require("puppeteer");
 const Product = require("../models/Product");
+const User = require("../models/usermodel");
 const scrapeData = require("../utils/scrapeData");
+
+function isAuthenticatedUser(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  req.flash("error_msg", "Please Login first to access this page.");
+  res.redirect("/login");
+}
 
 router.get("/scrape", (req, res) => {
   res.render("scrape");
 });
 
-router.get("/searchProduct", (req, res) => {
-  res.render("searchProduct");
+router.get("/index", (req, res) => {
+  res.render("index");
 });
 
 router.get("/scrapeResults", async function (req, res) {
@@ -68,6 +81,43 @@ router.get("/resultsproducts", async (req, res) => {
     console.log(error);
     res.status(500).send("Error searching products");
   }
+});
+
+router.get("/login", (req, res) => {
+  res.render("login");
+});
+
+router.get("/signup", (req, res) => {
+  res.render("signup");
+});
+
+router.post(
+  "/login",
+  passport.authenticate("local", {
+    successRedirect: "/index",
+    failureRedirect: "/login",
+    failureFlash: "Invalid email or password. Try Again!!!",
+  })
+);
+
+router.post("/signup", (req, res) => {
+  let { name, email, password } = req.body;
+
+  let userData = {
+    name: name,
+    email: email,
+  };
+
+  User.register(userData, password, (err, user) => {
+    if (err) {
+      req.flash("error_msg", "ERROR: " + err);
+      res.redirect("/signup");
+    }
+    passport.authenticate("local")(req, res, () => {
+      req.flash("success_msg", "Account created successfully");
+      res.redirect("/login");
+    });
+  });
 });
 
 module.exports = router;

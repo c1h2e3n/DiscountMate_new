@@ -1,0 +1,300 @@
+
+/*reset the ddefault css*/
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif ;
+    text-decoration:none;
+}
+
+
+/*Adjusting the style of header  in terms of background color, width and so on*/
+.header {
+    width:100%;
+    background-color:rgba(142, 242, 109, 1);
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 10%;
+    align-items: center;
+    flex-wrap: wrap;
+ 
+}
+
+/*adjusting the logo section to be in the same line with nav bar */
+.logo {
+    width:40%;
+    cursor: pointer;
+}
+
+/*adjusting the content of logo */
+.logo a {
+    font-weight: 700;
+    font-size: 25px;
+    color:black;
+}
+
+/*Adjust the nav bar to take 60% of whole header and be flexible*/
+.nav {
+    width:60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/*Adjust the nav bar items to take 12% of whole header*/
+.first, .second,.third, .forth, .fifth  {
+    width:15%;
+}
+
+/*Adjust the content of nav bar*/
+.first a, .second a, .third a, .forth a, .fifth a {
+    font-weight: 700;
+    font-size: 12px;
+    color:black;
+}
+
+/*make nav bar items responsive to the mouse when hovering over them*/
+.first a:hover, .second a:hover, .third a:hover, .forth a:hover, .fifth a:hover {
+    cursor: pointer;
+    color:white;
+}
+
+
+/*Adjsuting the style of middle part section */
+.second-row {
+    width: 100%;
+    background-color: rgba(132, 229, 247, 1);
+    padding: 100px 10%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Styling the text box in the middle of the website */
+.text-box {
+    width: 50%;
+    
+}
+
+/* Styling the text within the text box in the middle of the website */
+.text-box h1 {
+    color:rgb(9, 9, 9);
+    font-weight: bold;
+    padding-bottom: 20px;
+    font-size: 44px;
+}
+
+/* Styling the text within the text box in the middle of the website */
+.text-box h2 {
+    color:rgb(8, 8, 8);
+    padding-bottom: 30px;
+    font-size: 20px;
+}
+
+/* Styling the text within the text box in the middle of the website */
+.text-box p {
+    padding-bottom: 25px;
+    line-height: 25px;
+    padding-right: 30px;
+}
+
+
+/* Styling the text search button */
+
+.text-box a button {
+    font-size: 20px;
+    font-weight: bold;
+    
+    border:1px solid;
+    background:none;
+    border-radius: 20px;
+    padding:10px 90px;
+
+}
+
+/*make the search button responsive to the mouse when hovering over them*/
+.text-box a button:hover {
+    cursor: pointer;
+    color:white;
+    transform: scale(1.2);
+}
+
+/*styling the image in the left side of the website*/
+
+.ScienceCollab {
+    width:50%;
+    border-radius: 50px;
+    background-size: cover;
+    
+}
+
+
+/*adjusting the cards the bottom of the website*/
+.third-row {
+    width:100%;
+    background-color: rgba(211, 126, 223, 0.726);
+
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 10%;
+    flex-wrap: wrap;
+}
+
+
+/*styling the cards with 25% width*/
+.card {
+    width:25%;
+    background-color: white;
+    margin: 20px ;
+    border-radius: 50px;
+}
+
+/* styling a frame to contain the images*/
+
+.Card-image {
+    height:150px;
+    margin-bottom: 15px;
+    background-size: cover;
+    border-radius: 50px 50px 0 0;
+    background-size:cover;
+}
+
+/* Uploading the images to the cards*/
+
+.card-1 {
+    background-image:url(/Images/1.jpg);
+}
+
+.card-2 {
+    background-image:url(/Images/2.jpg);
+}
+
+.card-3 {
+    background-image:url(/Images/3.jpg);
+}
+
+
+/*Styling the title of the cards*/
+
+.heading-card {
+    padding:0px 10px;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*Styling the description of the cards*/
+
+.description {
+    padding: 20px;
+    font-size: 15px;
+    text-align: center;
+}
+
+/*Styling the button underneath of each cards*/
+
+.card a {
+    padding: 25px;
+    background-color: rgb(200, 228, 198);
+    text-align: center;
+    display: block;
+    margin: 20px 50px;
+    border-radius: 50px;
+    font-size: 15px;
+    color:black;
+}
+
+
+/*make each card responsive to mouse when hovering over it */
+.card:hover {
+    background-color: rgb(32, 31, 31);
+    color:white;
+    cursor: pointer;
+    transform: scale(1.15);
+}
+
+/* Style the form container */
+.form-container {
+    display: flex; /* Use flexbox layout */
+    justify-content: center; /* Center align items horizontally */
+    margin-bottom: 20px; /* Add some space at the bottom */
+}
+
+/* Style the input box */
+.form-control {
+    width: 75%; /* Set the width of the input box */
+    padding: 10px; /* Add padding to improve appearance */
+    font-size: 16px; /* Set the font size */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 5px; /* Add border radius */
+}
+
+/* Style the search button */
+.btn-search {
+    background-color: #28a745; /* Green background color */
+    color: #fff; /* White text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Add padding */
+    font-size: 16px; /* Set the font size */
+    border-radius: 5px; /* Add border radius */
+    cursor: pointer; /* Add pointer cursor on hover */
+}
+
+/* Hover effect for the search button */
+.btn-search:hover {
+    background-color: #218838; /* Darker green color on hover */
+}
+
+
+
+
+/*Make the website responsive for Mobile */
+@media screen and (max-width: 500px)
+{
+/*Putting the navigation items in header into columns */
+    .logo, .first, .second, .third, .forth, .fifth{
+        width:100%;
+        text-align: center;
+        justify-content:center;
+        align-items: center;
+        margin-top: 25px;       
+    }
+
+/*Putting the text box and image in the middle part into columns */
+    .text-box, .ScienceCollab {
+        width: 100%;
+        text-align: center;
+        justify-content:center;
+        align-items: center;
+        padding: 20px 30px;
+    }
+
+    /*adjust the font size for mobile */
+    .text-box h1 {
+             
+        font-size: 30px;
+    }
+    /*adjust the font size for mobile */
+    .text-box h2 {
+             
+        font-size: 20px;
+    }
+    /*adjust the font size for mobile */
+    .text-box p {
+             
+        padding-right: 0px;
+    }
+    /*Putting the cards in the bottom part into columns */
+    .card {
+        width:100%;
+        text-align: center;
+        justify-content:center;
+        align-items: center;
+        
+    }
+    
+}
