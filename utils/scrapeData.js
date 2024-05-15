@@ -14,7 +14,7 @@ const scrapeData = async (url, page) => {
 
     let title = scrapeDataItem(
       $,
-      "#coles-targeting-main-container > div > div.sc-3cdb92df-9.hLNHTa.coles-targeting-StylesProductDetailStylesProductCTAWrapper > div.sc-9a1967ae-0.dibXQr.coles-targeting-ProductBuyProductBuyContainer > h1"
+      "#coles-targeting-main-container > div > div.sc-3cdb92df-9.hLNHTa.coles-targeting-StylesProductDetailStylesProductCTAWrapper > div.sc-b104d029-0.fvqxHq.coles-targeting-ProductBuyProductBuyContainer > h1"
     );
 
     let price = scrapeDataItem(
