@@ -1,17 +1,11 @@
-
 <%- include('partials/header') -%>
 
 <div class="container">
-    <% if (searchTitle) { %>
-        <div class="row mb-3">
-            <div class="col-md-12">
-                <div class="btn-group" role="group" aria-label="Sort by">
-                    <a href="?title=<%= searchTitle %>&sort=price" class="btn btn-primary">Sort by Price</a>
-                    <a href="?title=<%= searchTitle %>&sort=discount" class="btn btn-primary">Sort by Discount</a>
-                </div>
-            </div>
-        </div>
-    <% } %>
+    <h1>Search Results for "<%= searchTitle %>"</h1>
+    <div class="sort-buttons">
+        <a href="/resultsproducts?title=<%= searchTitle %>&sort=price" class="btn btn-primary">Sort by Price</a>
+        <a href="/resultsproducts?title=<%= searchTitle %>&sort=discount" class="btn btn-primary">Sort by Discount</a>
+    </div>
     <% products.forEach(product => { %>
         <div class="card mb-5 w-75">
             <div class="row no-gutters">
@@ -35,34 +29,3 @@
 </div>
 
 <%- include('partials/footer') -%>
-
-
-
-<!-- 
-
- <%- include('partials/header') -%>
-
-
-    <% products.forEach(product => { %>
-        <div class="card mb-5 w-75">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                    <img src="<%= product.imgUrl %>" class="card-img img-fluid">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h2 class="card-title"><b><%= product.title %></b></h2>
-                        <h2 class="card-title"><b><%= product.price %></b> </h2>
-                        <hr>
-                        <h3 class="card-title" style="color: red;"><b>Discount: <%= product.discount %></b> </h3>
-                        <hr>
-                        <h4 class="mb-2">Product Details:</h4>
-                        <p class="card-text"><%= product.ProductDetails %></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <% }); %>
-
-   
-<%- include('partials/footer') -%> -->
