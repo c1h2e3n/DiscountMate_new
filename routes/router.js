@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const passport = require("passport");
 const puppeteer = require("puppeteer");
 const Product = require("../models/Product");
 const scrapeData = require("../utils/scrapeData");
