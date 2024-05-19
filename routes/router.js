@@ -2,21 +2,10 @@
 const express = require("express");
 const router = express.Router();
 const passport = require("passport");
-const crypto = require("crypto");
-const async = require("async");
-const nodemailer = require("nodemailer");
 const puppeteer = require("puppeteer");
 const Product = require("../models/Product");
 const User = require("../models/usermodel");
 const scrapeData = require("../utils/scrapeData");
-
-function isAuthenticatedUser(req, res, next) {
-  if (req.isAuthenticated()) {
-    return next();
-  }
-  req.flash("error_msg", "Please Login first to access this page.");
-  res.redirect("/login");
-}
 
 router.get("/scrape", (req, res) => {
   res.render("scrape");
@@ -52,9 +41,6 @@ router.get("/scrapeResults", async function (req, res) {
         productDetails: data.productDetails,
         imgUrl: data.imgUrl,
       });
-
-      console.log(product);
-
       await product.save();
 
       res.render("scrapeResults", { product: product });

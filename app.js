@@ -9,7 +9,7 @@ const session = require("express-session");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 
-//Requiring user route
+// Routes
 const userRoutes = require("./routes/router");
 
 //Requiring user model
@@ -19,7 +19,8 @@ dotenv.config({ path: "./config.env" });
 
 mongoose
   .connect(process.env.DATABASE_LOCAL)
-  .catch((error) => console.log(error));
+  .then(() => console.log("Connected to MongoDB"))
+  .catch((err) => console.error("Error connecting to MongoDB:", err));
 
 //middleware for session
 app.use(

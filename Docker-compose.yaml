@@ -1,0 +1,7 @@
+version: "3.8"
+services:
+  backend:
+    build: ./
+    container_name: myapi_container
+    ports:
+      - "3040:3040"
