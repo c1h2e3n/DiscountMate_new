@@ -1,0 +1,19 @@
+# Use a base image with a minimal setup
+FROM ubuntu:20.04
+
+# Install necessary packages
+RUN apt-get update && \
+    apt-get install -y curl gnupg software-properties-common bash
+
+# Install Docker
+RUN curl -fsSL https://get.docker.com | sh
+
+# Install abctl
+RUN curl -LsfS https://get.airbyte.com | bash -
+
+# Set the working directory
+WORKDIR /app
+
+EXPOSE 8000
+
+CMD ["sh", "-c", "dockerd-entrypoint.sh & abctl local install"]

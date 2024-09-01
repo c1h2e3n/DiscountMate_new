@@ -46,3 +46,10 @@ services:
     volumes:
       - "./db_sample_create:/app"
     command: ["python", "/app/create_sample_product.py"]
+
+  airbyte:
+    build: ./airbyte_install
+    privileged: true
+    volumes:
+      - ./airbyte_install:/app
+      - /var/run/docker.sock:/var/run/docker.sock
